@@ -73,7 +73,7 @@ async def op(_, m :Message):
                 [
                     InlineKeyboardButton("👉 Update Channel 👈", url="https://telegram.dog/RnpUpdate")
                 ],[
-                    InlinekeyboardButton("🍀 Check Again 🍀","chk")
+                    InlinekeyboardButton("🍀 Check Again 🍀","start")
                 ]
             ]
         )
@@ -81,7 +81,7 @@ async def op(_, m :Message):
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-@app.on_callback_query(filters.regex("chk"))
+@app.on_callback_query(filters.regex("start"))
 async def chk(_, cb : CallbackQuery):
     try:
         await app.get_chat_member(cfg.CHID, cb.from_user.id)
